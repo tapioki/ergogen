@@ -1,11 +1,13 @@
 module.exports = {
     alps: require('./alps'),
+    integratedmcu: require('./integratedmcu'),
     button: require('./button'),
     choc: require('./choc'),
     chocmini: require('./chocmini'),
     diode: require('./diode'),
     jstph: require('./jstph'),
     jumper: require('./jumper'),
+    led: require('./led'),
     mx: require('./mx'),
     oled: require('./oled'),
     omron: require('./omron'),
@@ -17,5 +19,6 @@ module.exports = {
     scrollwheel: require('./scrollwheel'),
     slider: require('./slider'),
     trrs: require('./trrs'),
+    usbc: require('./usbc'),
     via: require('./via'),
 }
