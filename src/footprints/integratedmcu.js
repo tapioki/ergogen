@@ -186,15 +186,15 @@ module.exports = {
         return `
           (module 0603 (layer F.Cu) (tedit 5CF31DEF)
           ${'' /* footprint reference */}
-          (at ${p.xy(x, y)} ${rot})
+          (at ${p.xy(x, y)} ${rot+p.rot})
           (fp_text reference "${label}" (at ${Math.abs(rot) == 90 ? '-2 0' : '0 -1'}) (layer F.SilkS) (effects (font (size 0.7 0.7) (thickness 0.15))))
           (fp_line (start -1.35 0.55) (end -1.35 -0.55) (layer F.SilkS) (width 0.2))
           (fp_line (start 1.35 0.55) (end -1.35 0.55) (layer F.SilkS) (width 0.2))
           (fp_line (start 1.35 -0.55) (end 1.35 0.55) (layer F.SilkS) (width 0.2))
           (fp_line (start -1.35 -0.55) (end 1.35 -0.55) (layer F.SilkS) (width 0.2))
-          (pad 2 smd rect (at 0.75 0 ${rot}) (size 0.8 0.75) (layers ${p.param.side}.Cu ${p.param.side}.Paste ${p.param.side}.Mask)
+          (pad 2 smd rect (at 0.75 0 ${rot+p.rot}) (size 0.8 0.75) (layers ${p.param.side}.Cu ${p.param.side}.Paste ${p.param.side}.Mask)
             ${to} (clearance 0.1))
-          (pad 1 smd rect (at -0.75 0 ${rot}) (size 0.8 0.75) (layers ${p.param.side}.Cu ${p.param.side}.Paste ${p.param.side}.Mask)
+          (pad 1 smd rect (at -0.75 0 ${rot+p.rot}) (size 0.8 0.75) (layers ${p.param.side}.Cu ${p.param.side}.Paste ${p.param.side}.Mask)
             ${from} (clearance 0.1))
           )
         `
@@ -388,7 +388,7 @@ module.exports = {
         ${components('22pF', 3, 11.9, 90, p.net.P17.str, p.net.GND.str)}
 
         ${GND_plane}
-        ${traces})
+        ${traces}
       `
     }
   }
