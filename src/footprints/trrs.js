@@ -70,7 +70,10 @@ module.exports = {
         return `
           ${standard}
           ${pins('-4.6', '0')}
-          ${pins('4.6', '0')})
+          ${pins('-1.7', '-6.35')}
+          (pad "" np_thru_hole circle (at -4.05 8.6) (size 1.5 1.5) (drill 1.5) (layers *.Cu *.Mask))
+          (pad "" np_thru_hole circle (at -4.05 1.6) (size 1.5 1.5) (drill 1.5) (layers *.Cu *.Mask))
+          )
         `
       } else {
         return `
